@@ -45,19 +45,15 @@ namespace Q2
                 }
                 Array.Sort(numbers);
                 
-                for (int i = 0; i < 4; i++)
-                {
-                    for (int j = i+1; j < 4; j++)
+                for (int i = 0; i < 3; i++)
+                { 
+                    if (numbers[i] == numbers[i+1])
                     {
-                        if (numbers[i] == numbers[j]) 
-                        {
-							isValid = true;
-							sum = numbers[i] + numbers[j];
-                            i = 5;
-                            j = 5;
-						}                        
-                    }
-                }
+						isValid = true;
+						sum = numbers[i] * 2;
+						i = 5;
+					}
+				}
             }
 			points = numbers;
             sumCouple = sum;
